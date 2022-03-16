@@ -12,7 +12,7 @@ app = FastAPI()
 
 ### Gets dex pool info
 @app.get("/cmc/dex")
-def hello():
+def cmcdex():
     response = requests.get("https://ton-swap-indexer.broxus.com/v1/cmc/dex")
     return response.json()
 
@@ -93,7 +93,7 @@ async def get_body(request: Request):
 
 ### Gets all Pairs data
 @app.get("/pairs/meta")
-async def get_body(request: Request):
+def pairsmeta():
     response = requests.get("https://ton-swap-indexer.broxus.com/v1/pairs/meta")
     return response.json()
     
